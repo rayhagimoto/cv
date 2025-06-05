@@ -193,12 +193,12 @@
 \item \VAR{edu.comments}
 \end{highlights}
 \end{onecolentry}
+\vspace{0.2cm}
 \BLOCK{ endfor }
 
 \section{Experience}
 \textbf{RESEARCH \& INDUSTRY}
 \BLOCK{ for exp in experience.research_and_industry }
-\vspace{0.2cm}
 \begin{twocolentry}{\VAR{exp.dates}}
     \textbf{\VAR{exp.title}}, \VAR{exp.organization} -- \VAR{exp.location}
 \end{twocolentry}
@@ -211,9 +211,9 @@
 \end{onecolentry}
 \BLOCK{ endfor }
 
+\vspace{0.2cm}
 \textbf{TEACHING}
 \BLOCK{ for teach in experience.teaching }
-\vspace{0.2cm}
 \begin{twocolentry}{\VAR{teach.dates}}
     \textbf{\VAR{teach.course}}, \VAR{teach.role}
 \end{twocolentry}
@@ -226,11 +226,19 @@
 \end{onecolentry}
 \BLOCK{ endfor }
 
+\vspace{0.2cm}
+\textbf{LEADERSHIP \& EXTRACURRICULARS}
+\BLOCK{ for lead in experience.leadership }
+\begin{twocolentry}{\VAR{lead.dates}}
+    \VAR{lead.title}, \emph{\VAR{lead.org}}
+\end{twocolentry}
+\BLOCK{ endfor }
+
 \section{Publications \& Talks}
 \textbf{\MakeUppercase{Journal Articles \& Preprints}}
 \begin{onecolentry}
 \begin{highlights}
-\BLOCK{ for pub in publications } \item \VAR{pub.year} -- \VAR{pub.authors}, ``\VAR{pub.title}'', \VAR{pub.arxiv}, \VAR{pub.journal}
+\BLOCK{ for pub in publications } \item \VAR{pub.year} -- \VAR{pub.authors}, ``\VAR{pub.title}'', \href{https://arxiv.org/abs/\VAR{pub.arxiv}}{arXiv:\VAR{pub.arxiv}}, \VAR{pub.journal}
 \BLOCK{ endfor }
 \end{highlights}
 \end{onecolentry}
@@ -253,7 +261,7 @@
 \end{highlights}
 \end{onecolentry}
 
-\section{Leadership \& Awards}
+\section{Awards}
 \textbf{AWARDS}
 \begin{onecolentry}
 \begin{highlights}
@@ -262,14 +270,6 @@
 \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2cm}
-\textbf{LEADERSHIP \& ACTIVITIES}
-\begin{onecolentry}
-\begin{highlights}
-\BLOCK{ for role in leadership }\item \VAR{role.title}, \VAR{role.org}, \VAR{role.dates}
-\BLOCK{ endfor }
-\end{highlights}
-\end{onecolentry}
 
 \vspace{0.2cm}
 \section{Technologies}

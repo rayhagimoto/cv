@@ -51,7 +51,7 @@ experience:
         - Co-authored publication in *The Astrophysical Journal Letters*.
 
   teaching:
-    - course: 'PHYS 112 - Honors E\\\&M (with lab)'
+    - course: 'PHYS 112 - Honors E\&M (with lab)'
       dates: 'Spring 2021'
       role: 'Teaching Assistant'
       bullets:
@@ -76,10 +76,13 @@ experience:
       bullets:
         - Held weekly problem-solving sessions with selected problems.
 
-  extracurricular:
+  leadership:
+    - title: 'Vice President'
+      org: 'Physics and Astronomy Graduate Student Association, Rice University'
+      dates: '2022 – 2023'
     - title: 'Professional Development Officer'
       org: 'Physics and Astronomy Graduate Student Association, Rice University'
-      dates: '2021 – present'
+      dates: '2021 – 2022'
     - title: 'Vice President'
       org: 'Society of Physics Students, UTSA'
       dates: '2019 – 2020'
@@ -87,35 +90,35 @@ experience:
       org: 'Society of Physics Students, UTSA'
       dates: '2018 – 2019'
     - title: 'Science writer'
-      org: '*The Paisano* (independent student newspaper)'
-      dates: null
+      org: 'The Paisano Independent Student Newspaper'
+      dates: '2017-2018'
 
 publications:
   - title: 'Extracting axion string network parameters from simulated CMB birefringence maps using CNNs'
     authors: 'R. Hagimoto, A. J. Long, M. A. Amin'
     year: 2025
-    arxiv: 'https://arxiv.org/abs/2411.05002'
+    arxiv: '2411.05002'
     doi: 'https://doi.org/10.1088/1475-7516/2025/03/001'
     journal: 'JCAP 03 (2025) 001'
 
   - title: 'Neutron star cooling with lepton-flavor-violating axions'
     authors: 'H. Zhang, R. Hagimoto, A. J. Long'
     year: 2024
-    arxiv: 'https://arxiv.org/abs/2309.03889'
+    arxiv: '2309.03889'
     doi: 'https://doi.org/10.1103/PhysRevD.109.103005'
     journal: 'Phys. Rev. D 109 (2024) 103005'
 
   - title: 'Measures of non-Gaussianity in axion-string-induced CMB birefringence'
     authors: 'R. Hagimoto, A. J. Long'
     year: 2023
-    arxiv: 'https://arxiv.org/abs/2306.07351'
+    arxiv: '2306.07351'
     doi: 'https://doi.org/10.1088/1475-7516/2023/09/024'
     journal: 'JCAP 09 (2023) 024'
 
   - title: 'Searching for axion-like particles through CMB birefringence from string-wall networks'
     authors: 'M. Jain, R. Hagimoto, A. J. Long, M. A. Amin'
     year: 2022
-    arxiv: 'https://arxiv.org/abs/2208.08391'
+    arxiv: '2208.08391'
     doi: 'https://doi.org/10.1088/1475-7516/2022/10/090'
     journal: 'JCAP 10 (2022) 090'
 
@@ -171,22 +174,10 @@ coursework:
   - course: 'Physics of Quarks and Leptons PHYS 543'
     grade: 'A+'
 
-leadership:
-  - title: 'Professional Development Officer'
-    org: 'Physics and Astronomy Graduate Student Association, Rice University'
-    dates: '2021 – 2022'
-  - title: 'Vice President'
-    org: 'Society of Physics Students, UTSA'
-    dates: '2019 – 2020'
-  - title: 'Treasurer'
-    org: 'Society of Physics Students, UTSA'
-    dates: '2018 – 2019'
-  - title: 'Science writer'
-    org: '*The Paisano* (independent student newspaper)'
-    dates: ''
-
 awards:
-  - "Dean's List, UTSA (2016 – 2020)"
+  - 'NSF Graduate Research Fellowship Award Honorable Mention (2021)'
+  - 'Rice University Deans Fellowship (2020 - 2024)'
+  - 'Deans List, UTSA (2016 – 2020)'
   - 'Presidential Scholarship, UTSA (2016 – 2020)'
   - 'National Merit Scholar (2016)'
 
