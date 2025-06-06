@@ -1,0 +1,49 @@
+name: Build CV
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Create virtual environment
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          
+      - name: Install dependencies
+        run: |
+          . .venv/bin/activate
+          pip install pyyaml jinja2
+          
+      - name: Build CV
+        uses: xu-cheng/texlive-action@v2
+        with:
+          root_file: build/output.tex
+          pre_compile: |
+            . .venv/bin/activate
+            python render_cv.py
+          post_compile: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            if git show-ref --quiet refs/heads/gh-pages; then
+              git checkout gh-pages
+            else
+              git checkout --orphan gh-pages
+            fi
+            git rm -rf .
+            git add ray_hagimoto_cv.pdf
+            git commit -m "Deploy ray_hagimoto_cv.pdf"
+            git push origin gh-pages --force 
