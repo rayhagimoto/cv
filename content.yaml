@@ -48,7 +48,7 @@ experience:
       dates: 'June 2019 – Sept 2019'
       bullets:
         - Built Python software for astrophysical correlation function analysis.
-        - Co-authored publication in *The Astrophysical Journal Letters*.
+        - Co-authored publication in \emph{The Astrophysical Journal Letters}.
 
   teaching:
     - course: 'PHYS 112 - Honors E\&M (with lab)'

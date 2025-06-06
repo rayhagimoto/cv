@@ -21,11 +21,12 @@
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
-    pdftitle={John Doe's CV},
-    pdfauthor={John Doe},
+    pdftitle={Ray Hagimoto's CV},
+    pdfauthor={Ray Hagimoto},
     pdfcreator={LaTeX with RenderCV},
     colorlinks=true,
-    urlcolor=primaryColor
+    urlcolor=primaryColor,
+    hidelinks=true
 ]{hyperref} % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
@@ -36,6 +37,7 @@
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{xstring}
 
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -147,35 +149,34 @@
   }%
 }%
 
-% save the original href command in a new command:
-\let\hrefWithoutArrow\href
+\newcommand{\ShortURL}[1]{%
+  \IfSubStr{#1}{://}{%
+    \StrBehind{#1}{://}[\urlbody]%
+    \urlbody
+  }{%
+    #1
+  }%
+}
+\newcommand{\AND}{ \,$|$\, }
+
 {% endraw %}
+\newcommand{\sectionspace}{\vspace{0.2cm}}
 
 \begin{document}
-\begin{header}
-    \fontsize{25 pt}{25 pt}\selectfont \VAR{candidate.name}
-
-    \vspace{5 pt}
-
-    \normalsize
-    \mbox{\VAR{candidate.location}}%
-    \kern 5.0 pt%
-    |
-    \kern 5.0 pt%
-    \mbox{\hrefWithoutArrow{mailto:\VAR{candidate.email}}{\VAR{candidate.email}}}%
-    \kern 5.0 pt%
-    |
-    \kern 5.0 pt%
-    \mbox{\hrefWithoutArrow{tel:\VAR{candidate.phone|replace('-', '')}}{\VAR{candidate.phone}}}%
-    \kern 5.0 pt%
-    |
-    \kern 5.0 pt%
-    \mbox{\hrefWithoutArrow{\VAR{candidate.website}}{\VAR{candidate.website}}}%
-    \kern 5.0 pt%
-    |
-    \kern 5.0 pt%
-    \mbox{\hrefWithoutArrow{\VAR{candidate.linkedin}}{\VAR{candidate.linkedin}}}%
-\end{header}
+\begin{center}
+    {\large\bfseries\uppercase{\VAR{candidate.name}}}
+    \\\vspace{0.1cm}
+    \href{mailto:\VAR{candidate.email}}{\VAR{candidate.email}} 
+    \AND%
+    \href{tel:\VAR{candidate.phone|replace('-', '')}}{\VAR{candidate.phone}}%
+    \AND%
+    \href{\VAR{candidate.website}}{\ShortURL{\VAR{candidate.website}}}%
+    \AND%
+    \href{\VAR{candidate.linkedin}}{\ShortURL{\VAR{candidate.linkedin}}}%
+    \\\vspace{0.1cm}
+    \VAR{candidate.location}
+\end{center}
+\sectionspace
 
 \section{Profile}
 \begin{onecolentry}
@@ -226,14 +227,6 @@
 \end{onecolentry}
 \BLOCK{ endfor }
 
-\vspace{0.2cm}
-\textbf{LEADERSHIP \& EXTRACURRICULARS}
-\BLOCK{ for lead in experience.leadership }
-\begin{twocolentry}{\VAR{lead.dates}}
-    \VAR{lead.title}, \emph{\VAR{lead.org}}
-\end{twocolentry}
-\BLOCK{ endfor }
-
 \section{Publications \& Talks}
 \textbf{\MakeUppercase{Journal Articles \& Preprints}}
 \begin{onecolentry}
@@ -270,6 +263,13 @@
 \end{highlights}
 \end{onecolentry}
 
+\vspace{0.2cm}
+\section{Leadership \& Extracurriculars}
+\BLOCK{ for lead in experience.leadership }
+\begin{twocolentry}{\VAR{lead.dates}}
+    {\bfseries \VAR{lead.title} }, \emph{\VAR{lead.org}}
+\end{twocolentry}
+\BLOCK{ endfor }
 
 \vspace{0.2cm}
 \section{Technologies}

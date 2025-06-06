@@ -12,7 +12,7 @@ CONFIG_PATH = ROOT / "content.yaml"
 TEMPLATE_PATH = SRC_DIR / "template.tex"
 OUTPUT_PATH = BUILD_DIR / "output.tex"
 PDF_PATH = BUILD_DIR / "output.pdf"
-FINAL_PDF_PATH = ROOT / "ray_hagimoto_cv.pdf"
+FINAL_PDF_PATH = ROOT / "ray-hagimoto-cv.pdf"
 
 def main():
     # Create build directory if it doesn't exist
